@@ -1,0 +1,362 @@
+/** 1，主体页面布局 **/
+
+/** 全局铺满网页 **/
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/** 容器继承全局的设置 **/
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+/** 侧边样式设置 **/
+.side {
+    width: 220px;
+    height: 100%;
+
+    float: left;
+    position: relative;
+    padding-top: 70px;
+    box-sizing: border-box; /*为元素设定的宽度和高度决定了元素的边框盒*/
+}
+
+/** 主体样式设置 **/
+.content {
+    width: auto;
+    height: 100%;
+    margin-left: 220px;
+
+    position: relative;
+    padding-top: 70px;
+    box-sizing: border-box; /*为元素设定的宽度和高度决定了元素的边框盒*/
+
+    overflow-x: hidden;
+}
+
+/** logo区域 **/
+.side-logo {
+    width: 100%;
+    height: 70px;
+    background-color: #4F2222;
+    position: absolute;
+    top: 0px;
+
+    font-size: 40px;
+    text-align: center;
+    vertical-align:middle;
+    color: #EEEEEE;
+}
+
+/** 侧边导航 **/
+.side-navigation {
+    height: 100%;
+    background-color: #6F2D2D;
+
+    overflow: hidden;
+}
+
+/** 提示内容 **/
+.content-prompt {
+    width: 100%;
+    height: 70px;
+    background-color: #4F2222;
+    position: absolute;
+    top: 0px;
+}
+
+/** 标签栏 **/
+.content-tabs {
+    width: 100%;
+    height: 40px;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 30px;
+
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#FFFFFF), to(#EEEEEE));
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    background-image: -o-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    background-image: linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    border-top-left-radius: 8px;
+
+    box-shadow: 0 0 1px #ffffff;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+/** 内容页面 **/
+.content-page {
+    height: 100%;
+    overflow: auto;
+    background-color: #EEEEEE;
+}
+
+/** 2，导航菜单 **/
+
+.accordion {
+    width: 240px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/** 一级导航目录样式 **/
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    padding: 12px 15px 12px 40px;
+    color: #AAAAAA;
+    font-size: 15px;
+    border-bottom: 1px solid #661D1D;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+/** 一级导航箭头 **/
+.accordion li i.fa-chevron-down {
+    left: 190px;
+    font-size: 12px;
+}
+
+/** 一级导航箭头翻转 **/
+.accordion li.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/** 一级导航的图标 **/
+.accordion li i {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    font-size: 15px;
+    color: #AAAAAA;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+/** 点击一级导航以后，字体变色 **/
+.accordion li.open .link {
+    color: white;
+}
+
+/** 点击一级导航以后，图标变色 **/
+.accordion li.open .link i {
+    color: white;
+}
+
+/** 子菜单折叠隐藏 **/
+.submenu {
+    display: none;
+}
+
+/** 子菜单样式 **/
+.submenu a {
+    cursor: pointer;
+    display: block;
+    padding: 12px 15px 12px 50px;
+    color: #AAAAAA;
+    font-size: 15px;
+    border-bottom: 1px solid #661D1D;
+    text-decoration: none;
+    position: relative;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+/** 子菜单的图标 **/
+.submenu li i {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    font-size: 15px;
+    color: #AAAAAA;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+/** 鼠标划过改变背景色，字体色 **/
+.submenu a:hover {
+    background: rgb(125, 52, 52);
+    color: #FFF;
+}
+
+/** 鼠标划过改变图标色 **/
+.submenu a:hover i {
+    color: white;
+}
+
+/** 点击子菜单改变字体 **/
+.submenu li.current a {
+    background: rgb(69, 28, 28);
+    color: #FFF;
+}
+
+/** 点击子菜单改变图标 **/
+.submenu li.current i {
+    color: white;
+}
+
+/** 3,标签栏样式设置 **/
+
+/** 向左边滑动图标 **/
+.leftTab {
+    height: 40px;
+    left: 0px;
+    width: 40px;
+    position: absolute;
+
+    font-size: 16px;
+    padding: 9px 15px 12px 15px;
+    color: darkred;
+}
+
+/** 中间标签占据位置 **/
+.centerTabs {
+    height: 40px;
+    margin-left: 40px;
+    width: 100000px;
+    overflow: hidden;
+}
+
+/** 向右边滑动图标 **/
+.rightTab {
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    width: 40px;
+    top: 0px;
+
+    font-size: 16px;
+    padding: 9px 15px 12px 15px;
+    color: darkred;
+
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#FFFFFF), to(#EEEEEE));
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    background-image: -o-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    background-image: linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.menu-list {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+
+/** 各个标签页。未选中，未悬浮 **/
+.menu-list a {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    color: black;
+    letter-spacing: 1px;
+
+    padding: 0 10px 0 10px;
+    border-right: 1px solid #d6d6d6;
+    font-size: 12px;
+    cursor: pointer;
+
+    transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+    -o-transition: background-color .5s
+}
+
+/** 标签页。鼠标悬浮 **/
+.menu-list a:hover {
+    color: white;
+    font-size: 14px;
+    background-color: #6F2D2D;
+    letter-spacing: 1px;
+}
+
+/** 标签页。鼠标点击 **/
+.menu-list a.active {
+    color: white;
+    font-size: 14px;
+    background-color: #6F2D2D;
+    letter-spacing: 1px;
+
+    transition: color .5s;
+    -moz-transition: color .5s;
+    -webkit-transition: color .5s;
+    -o-transition: color .5s;
+    transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+    -o-transition: background-color .5s
+}
+
+/** 标签页的关闭按钮 **/
+.menu-close {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background-size: 15px;
+    background-image: url(../image/tabBar/close.png);
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-top: -2px
+}
+
+/**当鼠标悬浮在标签页的关闭按钮上面时**/
+.menu-close:hover {
+    background-image: url(../image/tabBar/closehover.png)
+}
+
+/**  4，框架 **/
+
+.content-page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.content-page .iframe-content {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: none
+}
+
+.content-page .active {
+    display: block
+}
+
+/** 5，提示内容区域 **/
+
+/* 快捷工具栏 */
+
+/** 6,全局样式设置 **/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #AAAAAA;
+    text-decoration: none;
+}

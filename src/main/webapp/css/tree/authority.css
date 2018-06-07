@@ -1,0 +1,13 @@
+/*左边用户树显示布局*/
+.left {
+    width: 49%;
+    float: left;
+    height: 100%;
+}
+
+/*右边菜单权限布局*/
+.right {
+    width: 49%;
+    float: right;
+    height: 100%;
+}

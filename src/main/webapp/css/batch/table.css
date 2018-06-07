@@ -1,0 +1,22 @@
+body {
+    background: #EEEEEE;
+}
+
+.queryContent {
+    width: 100%;
+}
+
+.queryContent td {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    height: 60px;
+}
+
+.queryContent input {
+    width: 250px;
+    height: 30px;
+    border: 1px solid #CDCDCD;
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+    background-color: #fff;
+}

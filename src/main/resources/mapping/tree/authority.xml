@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lgx.tree.dao.IAuthorityDAO">
+
+    <select id="queryMenu" resultType="com.lgx.tree.entity.MenuEntity">
+        SELECT
+            int_menu_id        AS menu_id,
+            var_menu_Icon      AS menu_Icon,
+            var_menu_name      AS menu_name,
+            var_menu_Icon2     AS menu_Icon2,
+            var_menu_url       AS menu_url,
+            int_parent_menu_id AS parent_menu_id
+        FROM menu_info
+    </select>
+
+    <select id="queryButtonByMenuID" parameterType="int" resultType="com.lgx.tree.entity.MenuButtonEntity">
+        SELECT
+            int_button_id   AS button_id,
+            var_button_name AS button_name
+        FROM menu_button_info
+        WHERE int_menu_id = #{menu_id}
+    </select>
+
+    <select id="queryAuthorityTreeIsChecked" parameterType="com.lgx.tree.entity.AuthorityEntity" resultType="int">
+        SELECT count(*)
+        FROM authority_info
+        WHERE int_user_id = #{user_id}
+              AND int_menu_id = #{menu_id}
+              AND int_button_id = #{button_id}
+    </select>
+
+</mapper>

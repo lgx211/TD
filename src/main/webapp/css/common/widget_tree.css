@@ -1,0 +1,76 @@
+/*1，标头部分*/
+.title {
+    background-color: #efefef;
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#fdfdfd), to(#eaeaea));
+    background-image: -webkit-linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    background-image: -moz-linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    background-image: -ms-linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    background-image: -o-linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    background-image: linear-gradient(top, #fdfdfd 0%, #eaeaea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#eaeaea', GradientType=0); /* IE6-9 */
+    border-bottom: 1px solid #CDCDCD;
+    height: 36px;
+}
+
+/*1.1，标头中的图像区域*/
+.title i {
+    border-right: 1px solid #cdcdcd;
+    padding: 9px 10px 7px 11px;
+    float: left;
+    opacity: .7;
+}
+
+/*1.2标头中的文字区域*/
+.title h5 {
+    color: #666666;
+    text-shadow: 0 1px 0 #ffffff;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px;
+    line-height: 12px;
+    margin: 0px;
+}
+
+/*2有滚动条的，高度自适应的标主题部分*/
+.score-content {
+    padding: 10px 12px;
+    border-bottom: 1px solid #cdcdcd;
+    background-color: #F9F9F9;
+
+    top: 45px;
+    overflow: auto;
+    height: calc(100% - 58px);
+}
+
+/*2.1滚动条整体样式*/
+.score-content::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+/*2.2滚动条里面小方块*/
+.score-content::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/*2.3滚动条里面轨道*/
+.score-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/*3固定高度的标主体部分*/
+.fixed-content {
+    padding: 10px 12px;
+    border-bottom: 1px solid #cdcdcd;
+    background-color: #F9F9F9;
+    text-align: center;
+    height: 80px;
+}
+
+
+

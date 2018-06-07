@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lgx.tree.dao.IUserBasicDAO">
+
+    <select id="queryUserBasicByInstitutionID" parameterType="int" resultType="com.lgx.tree.entity.UserBasicEntity">
+        SELECT
+            ubi.int_user_id   AS user_id,
+            ubi.var_login_name AS login_name
+        FROM user_institution_info uii
+            INNER JOIN user_basic_info ubi
+                ON uii.int_user_id = ubi.int_user_id
+        WHERE uii.int_indtitution_id = #{institution_id}
+    </select>
+
+</mapper>
